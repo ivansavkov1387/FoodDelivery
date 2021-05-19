@@ -9,18 +9,16 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var phoneNumberTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
     @IBOutlet weak var loginButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 10
-
+        
     }
     
     func showAlert() {
@@ -32,8 +30,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed() {
-        
-        if phoneNumberTF.text == UserData.getUserData().name && passwordTF.text == UserData.getUserData().password {
+        if phoneNumberTF.text == UserData.getUserData().name &&
+            passwordTF.text == UserData.getUserData().password {
             performSegue(withIdentifier: "login", sender: nil)
         } else {
             showAlert()
@@ -42,8 +40,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-
-
 }
 
 extension LoginViewController: UITextFieldDelegate {

@@ -12,6 +12,7 @@
         <scene sceneID="T4J-8c-tdT">
             <objects>
                 <navigationController id="kxV-Tz-1H8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3BG-x4-k8i"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RiE-ms-vmz">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -53,8 +54,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PBy-rV-ZvW"/>
-                                    <segue destination="hN2-m9-rXJ" kind="show" identifier="login" id="WTx-hE-BmD"/>
+                                    <action selector="loginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="yiR-S7-hUu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,6 +66,7 @@
                         <outlet property="loginButton" destination="cvv-GI-QCZ" id="epQ-e3-1um"/>
                         <outlet property="passwordTF" destination="2ne-3R-VNc" id="EWQ-DS-5Xd"/>
                         <outlet property="phoneNumberTF" destination="tF7-eZ-5vL" id="cU4-5h-UV1"/>
+                        <segue destination="hN2-m9-rXJ" kind="show" identifier="login" id="QGv-Vk-qef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -94,7 +95,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="nKQ-yN-4P4" kind="show" id="vat-6U-GBN"/>
+                                    <segue destination="nKQ-yN-4P4" kind="show" identifier="" id="vat-6U-GBN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f32-Kf-G3N">
@@ -105,21 +106,29 @@
                                 <state key="normal" title="SUSHI">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XE0-T3-1Vo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Food" id="50t-PP-pYc"/>
+                    <navigationItem key="navigationItem" title="Food" id="50t-PP-pYc">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Ai7-Vw-pK8"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2b-M8-8WH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="824.63768115942037" y="77.678571428571431"/>
+            <point key="canvasLocation" x="843" y="78"/>
         </scene>
-        <!--Pizza View Controller-->
+        <!--Pizza-->
         <scene sceneID="Od6-oa-EOg">
             <objects>
-                <viewController id="nKQ-yN-4P4" customClass="PizzaViewController" customModule="FoodDelivery" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVB-QI-8e2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController title="Pizza" id="nKQ-yN-4P4" customClass="PizzaViewController" customModule="FoodDelivery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N2A-cJ-bm0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,9 +195,10 @@
                         <viewLayoutGuide key="safeArea" id="3aW-SG-2WC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="i5l-cT-fpk"/>
+                    <navigationItem key="navigationItem" title="Pizza" id="jh7-Jn-jZL">
+                        <barButtonItem key="backBarButtonItem" image="chevron.backward" catalog="system" id="TYG-sL-9aT"/>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lVB-QI-8e2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1711.5942028985507" y="77.678571428571431"/>
         </scene>
@@ -204,10 +214,10 @@
                                 <rect key="frame" x="87" y="44" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soo-gE-Pvn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soo-gE-Pvn">
                                 <rect key="frame" x="20" y="292" width="374" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -268,17 +278,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="chooseButtonPressed:" destination="Exn-7B-yML" eventType="touchUpInside" id="PGV-vD-WRa"/>
-                                    <segue destination="k2r-ux-Ufp" kind="show" id="ja9-S4-heK"/>
+                                    <segue destination="k2r-ux-Ufp" kind="presentation" identifier="order" modalPresentationStyle="fullScreen" id="kGU-8G-4mX"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ubK-Sq-pOh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="M16-gq-Rox"/>
                     <connections>
+                        <outlet property="cheeseSwitch" destination="ZG7-o1-h8n" id="wm3-Cb-aq0"/>
+                        <outlet property="colaSwitch" destination="kzj-6v-vgg" id="rsQ-t5-4Jj"/>
+                        <outlet property="hamSwitch" destination="zG9-Xs-e2U" id="jsx-Nx-SBI"/>
                         <outlet property="imageView" destination="Tjf-Xt-SGR" id="TeV-0V-xNI"/>
                         <outlet property="labelOutlet" destination="Soo-gE-Pvn" id="9ap-6z-ZTO"/>
+                        <outlet property="oliveSwitch" destination="R9X-IL-0xm" id="Zyc-5X-4R2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsF-de-Wbi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -290,23 +304,84 @@
             <objects>
                 <viewController id="k2r-ux-Ufp" customClass="OrderViewController" customModule="FoodDelivery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ljw-hj-wja">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0C-ib-KQJ">
+                                <rect key="frame" x="20" y="20" width="374" height="277"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewl-Wm-pnU">
+                                <rect key="frame" x="347" y="592" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="paperSwitchOff:" destination="k2r-ux-Ufp" eventType="valueChanged" id="MH5-1Z-n1b"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="die-wg-XeR">
+                                <rect key="frame" x="347" y="663" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="cardSwitchOff:" destination="k2r-ux-Ufp" eventType="valueChanged" id="oxA-Be-RQF"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Оплата наличными" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quR-EW-hGo">
+                                <rect key="frame" x="20" y="582" width="308" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Картой" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgr-qV-Bpm">
+                                <rect key="frame" x="20" y="653" width="228" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wmu-8l-QXf">
+                                <rect key="frame" x="20" y="740" width="374" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Pay"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="payButtonPressed:" destination="k2r-ux-Ufp" eventType="touchUpInside" id="Fxm-ts-1kF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="NHN-OT-05f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="FJC-SZ-5jt"/>
+                    <connections>
+                        <outlet property="cardSwitch" destination="die-wg-XeR" id="U9M-H5-y0d"/>
+                        <outlet property="orderLabel" destination="B0C-ib-KQJ" id="R8o-ko-bds"/>
+                        <outlet property="paperSwitch" destination="ewl-Wm-pnU" id="jnf-oJ-c3C"/>
+                        <segue destination="ipJ-9r-zWg" kind="unwind" identifier="goToMenu" unwindAction="unwindWithSegue:" id="kiO-bI-fmC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slk-NO-Bee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ipJ-9r-zWg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3467" y="78"/>
+            <point key="canvasLocation" x="3448" y="78"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="L31-vu-pdL"/>
+        <segue reference="oUG-6i-ttc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="carbonara" width="259" height="259"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="provence" width="259" height="259"/>
         <systemColor name="systemBackgroundColor">
